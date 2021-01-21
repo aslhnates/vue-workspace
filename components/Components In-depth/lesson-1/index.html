@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Components In-depth</title>
+</head>
+<body>
+  <div id="app">
+    <h1>Coffee Plans</h1>
+    <h2>We travel the world to source the very best single origin coffee for you</h2>
+
+    <div>
+      <plan-picker></plan-picker>
+    </div>
+  </div>
+
+  <script type="text/x-template" id="plan-picker-template">
+    <div class="plans">
+      <plan-picker-item v-for="plan in plans" :name="plan" @select="selectPlan" :selected-plan="selectedPlan"></plan-picker-item>
+    </div>
+  </script>
+
+  <script type="text/x-template" id="plan-picker-item-template">
+    <div @click="select" class="plan" :class="{'active-plan': isSelected}">{{name}}</div>
+  </script>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="app.js"></script>
+</body>
+</html>

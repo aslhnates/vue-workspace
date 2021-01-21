@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js Slots Fundamentals</title>
+</head>
+<body>
+  <div id="app">
+    <notification-message type="error" header="Hata"></notification-message>
+    <br><br>
+    <notification-message type="success" header="Başarılı"></notification-message>
+    <br><br>
+    <notification-message></notification-message>
+
+  </div>
+
+
+  <script type="text/x-template" id="notification-message-template">
+    <div :class="type" v-if="!hidden">
+      <span @click="hide">Close</span>
+      <div>{{header}}</div>
+      <slot></slot>
+    </div>
+  </script>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="app.js"></script>
+</body>
+</html>

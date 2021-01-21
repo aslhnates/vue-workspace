@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js Slots Fundamentals</title>
+</head>
+<body>
+  <div id="app" class="container">
+    <github-user-card v-for="username in usernames" :username="username"></github-user-card>
+  </div>
+
+
+  <script type="text/x-template" id="github-user-card-template">
+    <div>
+      <div class="card__image">
+        <img :src="user.avatar_url" alt="">
+      </div>
+      <a :href="user.html_url">{{user.name}}</a>
+      <div class="date">{{user.created_at}}</div>
+      <div class="descriprion">{{user.bio}}</div>
+      <div class="friends">{{user.followers}}</div>
+    </div>
+  </script>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Components Basics Lesson 1</title>
+</head>
+<body>
+  <div id="app">
+    <h1>Coffee Plans</h1>
+    <h2>We travel the world to source the very best single origin coffee for you</h2>
+
+    <div>
+      <plan name="The Single"></plan>
+      <plan name="The Curious"></plan>
+      <plan name="The Addict"></plan>
+
+      <br>
+      <br>
+
+      <plan v-for="plan in plans" :name="plan"></plan>
+    </div>
+  </div>
+
+  <script type="text/x-template" id="plan-template">
+    <div class="plan">{{name}}</div>
+  </script>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="app.js"></script>
+</body>
+</html>
